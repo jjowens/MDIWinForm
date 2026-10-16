@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../MDIWinForm.Library.Controls/MDIWinForm.Library.Controls.csproj" Id="64cea1be-be66-4d9b-b393-5a232fa78c12" />
+  <Project Path="../MDIWinFormTests/MDIWinFormTests.csproj" Id="7f61f6b8-2926-4358-9c89-5ab44e582ede" />
+  <Project Path="MDIWinForm.csproj" Id="849405e5-86b7-4007-8920-900681281143" />
+</Solution>
