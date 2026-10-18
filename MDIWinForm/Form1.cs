@@ -20,13 +20,8 @@ namespace MDIWinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //MenuStrip mnuTemp = new MenuStrip();
-            //mnuTemp.Items.Clear();
-            //mnuTemp.Items.Add(new ToolStripMenuItem("Hello"));
-            //mnuTemp.Items.Add(new ToolStripMenuItem("GoodBye"));
-
+            this.Controls.Add(new ToolbarEditor());
             this.Controls.Add(new MenuNewYork());
-
 
             this.ContextMenuStrip = new ContextWashington();
 
