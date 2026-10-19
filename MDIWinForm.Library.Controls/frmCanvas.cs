@@ -91,6 +91,7 @@ namespace MDIWinForm.Library.Controls
 
                 if (result == DialogResult.OK) { 
                     FilePath = saveFileDialog.FileName;
+                    this.Text = Path.GetFileName(FilePath);
                 } else
                 {
                     return;

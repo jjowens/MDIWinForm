@@ -112,7 +112,6 @@ namespace MDIWinForm.Library.Controls
 
             if (frm.MdiChildren.Count() > 0)
             {
-                //frmCanvas myCanvas = frm.MdiChildren.OfType<frmCanvas>().FirstOrDefault();
                 frmCanvas myCanvas = frm.ActiveMdiChild as frmCanvas;
 
                 if (myCanvas != null)
