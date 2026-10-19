@@ -29,6 +29,7 @@ namespace MDIWinForm.Library.Controls
         private void preinit()
         {
             InitializeComponent();
+            this.Text = "Blank";
             IsSaved = false;
             countCharacters();
         }
@@ -74,7 +75,31 @@ namespace MDIWinForm.Library.Controls
             if (File.Exists(FilePath)) 
             { 
                 richTextBox1.Text = File.ReadAllText(FilePath);
+                this.Text = Path.GetFileName(FilePath);
             }
+        }
+
+        public void SaveFile()
+        {
+            if (!File.Exists(FilePath) || FilePath == string.Empty) 
+            { 
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Text|*.txt";
+                saveFileDialog.Title = "Save File";
+
+                var result = saveFileDialog.ShowDialog();
+
+                if (result == DialogResult.OK) { 
+                    FilePath = saveFileDialog.FileName;
+                } else
+                {
+                    return;
+                }
+            }
+
+            File.WriteAllText(FilePath, richTextBox1.Text);
+
+            this.IsSaved = true;
         }
 
     }

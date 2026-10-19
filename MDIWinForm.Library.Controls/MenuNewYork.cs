@@ -40,9 +40,21 @@ namespace MDIWinForm.Library.Controls
         {
             ToolStripMenuItem menu = new ToolStripMenuItem("File");
 
-            menu.DropDownItems.Add(new ToolStripMenuItem("New", null, new_ClickedEvent));
-            menu.DropDownItems.Add(new ToolStripMenuItem("Open", null, open_ClickedEvent));
-            menu.DropDownItems.Add(new ToolStripMenuItem("Save", null, save_ClickedEvent));
+            ToolStripMenuItem newMenuItem = new ToolStripMenuItem("New", null, new_ClickedEvent);
+            newMenuItem.ShortcutKeyDisplayString = "Ctrl+N";
+            newMenuItem.ShortcutKeys = Keys.Control | Keys.N;
+            menu.DropDownItems.Add(newMenuItem);
+
+            ToolStripMenuItem openMenuItem = new ToolStripMenuItem("Open", null, open_ClickedEvent);
+            openMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
+            openMenuItem.ShortcutKeys = Keys.Control | Keys.O;
+            menu.DropDownItems.Add(openMenuItem);
+
+            ToolStripMenuItem saveMenuItem = new ToolStripMenuItem("Save", null, save_ClickedEvent);
+            saveMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
+            saveMenuItem.ShortcutKeys = Keys.Control | Keys.S;
+            menu.DropDownItems.Add(saveMenuItem);
+
             menu.DropDownItems.Add(new ToolStripSeparator());
             menu.DropDownItems.Add(new ToolStripMenuItem("Exit", null, exit_ClickedEvent));
 
@@ -105,7 +117,7 @@ namespace MDIWinForm.Library.Controls
 
                 if (myCanvas != null)
                 {
-                    myCanvas.IsSaved = true;
+                    myCanvas.SaveFile();
                 }
             }
         }
