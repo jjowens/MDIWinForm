@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace MDIWinForm.Library.Controls
 {
-    public partial class frmCanvas : Form
+    public partial class frmTextEditor : Form
     {
-        public frmCanvas()
+        public frmTextEditor()
         {
             preinit();
         }
 
-        public frmCanvas(string filePath)
+        public frmTextEditor(string filePath)
         {
             preinit();
             this.FilePath = filePath;
@@ -49,7 +49,7 @@ namespace MDIWinForm.Library.Controls
 
         private void countCharacters()
         {
-            tssLabelCounter.Text = String.Format("{0} characters", richTextBox1.Text.Length.ToString());
+            tssLabelCounter.Text = String.Format("{0} characters", txtNotes.Text.Length.ToString());
             IsSaved = false;
         }
 
@@ -74,7 +74,7 @@ namespace MDIWinForm.Library.Controls
         {
             if (File.Exists(FilePath)) 
             { 
-                richTextBox1.Text = File.ReadAllText(FilePath);
+                txtNotes.Text = File.ReadAllText(FilePath);
                 this.Text = Path.GetFileName(FilePath);
             }
         }
@@ -98,7 +98,7 @@ namespace MDIWinForm.Library.Controls
                 }
             }
 
-            File.WriteAllText(FilePath, richTextBox1.Text);
+            File.WriteAllText(FilePath, txtNotes.Text);
 
             this.IsSaved = true;
         }
