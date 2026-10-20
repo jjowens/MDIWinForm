@@ -48,11 +48,11 @@
     <Compile Include="ContextWashington.Designer.cs">
       <DependentUpon>ContextWashington.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCanvas.cs">
+    <Compile Include="frmTextEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCanvas.Designer.cs">
-      <DependentUpon>frmCanvas.cs</DependentUpon>
+    <Compile Include="frmTextEditor.Designer.cs">
+      <DependentUpon>frmTextEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuNewYork.cs">
       <SubType>Component</SubType>
@@ -75,8 +75,8 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmCanvas.resx">
-      <DependentUpon>frmCanvas.cs</DependentUpon>
+    <EmbeddedResource Include="frmTextEditor.resx">
+      <DependentUpon>frmTextEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

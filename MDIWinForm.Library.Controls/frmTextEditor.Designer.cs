@@ -1,6 +1,6 @@
 ﻿namespace MDIWinForm.Library.Controls
 {
-    partial class frmCanvas
+    partial class frmTextEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.txtNotes = new System.Windows.Forms.RichTextBox();
+            this.editorStatus = new System.Windows.Forms.StatusStrip();
             this.tssLabelCounter = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssLabelSavedStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusStrip1.SuspendLayout();
+            this.editorStatus.SuspendLayout();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // txtNotes
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(613, 301);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.txtNotes.Location = new System.Drawing.Point(12, 12);
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(613, 301);
+            this.txtNotes.TabIndex = 0;
+            this.txtNotes.Text = "";
+            this.txtNotes.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // statusStrip1
+            // editorStatus
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editorStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssLabelCounter,
             this.tssLabelSavedStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 324);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(637, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
+            this.editorStatus.Location = new System.Drawing.Point(0, 324);
+            this.editorStatus.Name = "editorStatus";
+            this.editorStatus.Size = new System.Drawing.Size(637, 22);
+            this.editorStatus.TabIndex = 1;
+            this.editorStatus.Text = "statusStrip1";
             // 
             // tssLabelCounter
             // 
@@ -70,17 +70,17 @@
             this.tssLabelSavedStatus.Size = new System.Drawing.Size(118, 17);
             this.tssLabelSavedStatus.Text = "toolStripStatusLabel1";
             // 
-            // frmCanvas
+            // frmTextEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 346);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.richTextBox1);
-            this.Name = "frmCanvas";
-            this.Text = "Canvas";
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.Controls.Add(this.editorStatus);
+            this.Controls.Add(this.txtNotes);
+            this.Name = "frmTextEditor";
+            this.Text = "Editor";
+            this.editorStatus.ResumeLayout(false);
+            this.editorStatus.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,8 +88,8 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.RichTextBox txtNotes;
+        private System.Windows.Forms.StatusStrip editorStatus;
         private System.Windows.Forms.ToolStripStatusLabel tssLabelCounter;
         private System.Windows.Forms.ToolStripStatusLabel tssLabelSavedStatus;
     }

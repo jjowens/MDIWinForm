@@ -26,7 +26,7 @@ namespace MDIWinForm.Library.Controls
         public void init()
         {
             this.AutoSize = true;
-            this.Name = "mnuNewYork";
+            this.Name = "menuNewYork";
             this.Text = "menuNewYork";
             this.TabIndex = 0;
             this.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -81,7 +81,7 @@ namespace MDIWinForm.Library.Controls
         private void new_ClickedEvent(object sender, EventArgs e)
         {
             Form frm = (this.Parent as Form);
-            frmCanvas frmCanvas = new frmCanvas();
+            frmTextEditor frmCanvas = new frmTextEditor();
             frmCanvas.MdiParent = frm;
             frmCanvas.Show();
         }
@@ -98,7 +98,7 @@ namespace MDIWinForm.Library.Controls
             if (result == DialogResult.OK)
             {
                 Form frm = (this.Parent as Form);
-                frmCanvas frmCanvas = new frmCanvas(openFileDialog.FileName);
+                frmTextEditor frmCanvas = new frmTextEditor(openFileDialog.FileName);
                 frmCanvas.MdiParent = frm;
                 frmCanvas.Show();
             }
@@ -112,7 +112,7 @@ namespace MDIWinForm.Library.Controls
 
             if (frm.MdiChildren.Count() > 0)
             {
-                frmCanvas myCanvas = frm.ActiveMdiChild as frmCanvas;
+                frmTextEditor myCanvas = frm.ActiveMdiChild as frmTextEditor;
 
                 if (myCanvas != null)
                 {
