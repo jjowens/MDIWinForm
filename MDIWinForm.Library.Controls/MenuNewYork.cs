@@ -50,6 +50,11 @@ namespace MDIWinForm.Library.Controls
             openMenuItem.ShortcutKeys = Keys.Control | Keys.O;
             menu.DropDownItems.Add(openMenuItem);
 
+            ToolStripMenuItem openImageMenuItem = new ToolStripMenuItem("Open Image", null, open_image_ClickedEvent);
+            openMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
+            openMenuItem.ShortcutKeys = Keys.Control | Keys.I;
+            menu.DropDownItems.Add(openImageMenuItem);
+
             ToolStripMenuItem saveMenuItem = new ToolStripMenuItem("Save", null, save_ClickedEvent);
             saveMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
             saveMenuItem.ShortcutKeys = Keys.Control | Keys.S;
@@ -77,7 +82,7 @@ namespace MDIWinForm.Library.Controls
         }
 
 
-        // FILE MENY EVENT HANDLERS
+        // FILE MENU EVENT HANDLERS
         private void new_ClickedEvent(object sender, EventArgs e)
         {
             Form frm = (this.Parent as Form);
@@ -101,6 +106,24 @@ namespace MDIWinForm.Library.Controls
                 frmTextEditor frmCanvas = new frmTextEditor(openFileDialog.FileName);
                 frmCanvas.MdiParent = frm;
                 frmCanvas.Show();
+            }
+        }
+
+        private void open_image_ClickedEvent(object sender, EventArgs e)
+        {
+            //Form frm = (this.Parent as Form);
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "All JPGs and PNGs|*.jpeg;*.jpg;*.png";
+            openFileDialog.Multiselect = false;
+
+            var result = openFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                Form frm = (this.Parent as Form);
+                frmImageViewer frmImageViewer = new frmImageViewer(openFileDialog.FileName);
+                frmImageViewer.MdiParent = frm;
+                frmImageViewer.Show();
             }
 
         }

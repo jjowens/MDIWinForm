@@ -48,6 +48,12 @@
     <Compile Include="ContextWashington.Designer.cs">
       <DependentUpon>ContextWashington.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImageViewer.Designer.cs">
+      <DependentUpon>frmImageViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTextEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,9 +78,13 @@
     <Compile Include="ToolbarEditor.Designer.cs">
       <DependentUpon>ToolbarEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\ImageDetailsService.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmImageViewer.resx">
+      <DependentUpon>frmImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTextEditor.resx">
       <DependentUpon>frmTextEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,5 +93,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
