@@ -54,7 +54,7 @@
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(392, 25);
+            this.treeView1.Location = new System.Drawing.Point(366, 25);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(382, 413);
             this.treeView1.TabIndex = 2;
@@ -62,7 +62,7 @@
             // lblImageDetails
             // 
             this.lblImageDetails.AutoSize = true;
-            this.lblImageDetails.Location = new System.Drawing.Point(389, 9);
+            this.lblImageDetails.Location = new System.Drawing.Point(363, 9);
             this.lblImageDetails.Name = "lblImageDetails";
             this.lblImageDetails.Size = new System.Drawing.Size(74, 13);
             this.lblImageDetails.TabIndex = 3;
@@ -73,7 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(761, 450);
             this.Controls.Add(this.lblImageDetails);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.lblImageFile);
