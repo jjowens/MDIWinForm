@@ -45,15 +45,10 @@ namespace MDIWinForm.Library.Controls
             newMenuItem.ShortcutKeys = Keys.Control | Keys.N;
             menu.DropDownItems.Add(newMenuItem);
 
-            ToolStripMenuItem openMenuItem = new ToolStripMenuItem("Open", null, open_ClickedEvent);
+            ToolStripMenuItem openMenuItem = new ToolStripMenuItem("Open", null, open_file_ClickedEvent);
             openMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
             openMenuItem.ShortcutKeys = Keys.Control | Keys.O;
             menu.DropDownItems.Add(openMenuItem);
-
-            ToolStripMenuItem openImageMenuItem = new ToolStripMenuItem("Open Image", null, open_image_ClickedEvent);
-            openMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
-            openMenuItem.ShortcutKeys = Keys.Control | Keys.I;
-            menu.DropDownItems.Add(openImageMenuItem);
 
             ToolStripMenuItem saveMenuItem = new ToolStripMenuItem("Save", null, save_ClickedEvent);
             saveMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
@@ -76,12 +71,6 @@ namespace MDIWinForm.Library.Controls
             return menu;
         }
 
-        private void do_nothing_ClickedEvent(object sender, EventArgs e)
-        {
-            MessageBox.Show(String.Format("{0} event has not been set up", sender.ToString()));
-        }
-
-
         // FILE MENU EVENT HANDLERS
         private void new_ClickedEvent(object sender, EventArgs e)
         {
@@ -91,11 +80,11 @@ namespace MDIWinForm.Library.Controls
             frmCanvas.Show();
         }
 
-        private void open_ClickedEvent(object sender, EventArgs e)
+        private void open_file_ClickedEvent(object sender, EventArgs e)
         {
             //Form frm = (this.Parent as Form);
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Text|*.txt";
+            openFileDialog.Filter = "Images Only|*.jpeg;*.jpg;*.png;|Text Files Only|*.txt;";
             openFileDialog.Multiselect = false;
 
             var result = openFileDialog.ShowDialog();
@@ -103,27 +92,21 @@ namespace MDIWinForm.Library.Controls
             if (result == DialogResult.OK)
             {
                 Form frm = (this.Parent as Form);
-                frmTextEditor frmCanvas = new frmTextEditor(openFileDialog.FileName);
-                frmCanvas.MdiParent = frm;
-                frmCanvas.Show();
-            }
-        }
 
-        private void open_image_ClickedEvent(object sender, EventArgs e)
-        {
-            //Form frm = (this.Parent as Form);
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "All JPGs and PNGs|*.jpeg;*.jpg;*.png";
-            openFileDialog.Multiselect = false;
+                if (openFileDialog.FilterIndex == 1)
+                {
+                    frmImageViewer frmImageViewer = new frmImageViewer(openFileDialog.FileName);
+                    frmImageViewer.MdiParent = frm;
+                    frmImageViewer.Show();
+                }
 
-            var result = openFileDialog.ShowDialog();
+                if (openFileDialog.FilterIndex == 2)
+                {
+                    frmTextEditor frmCanvas = new frmTextEditor(openFileDialog.FileName);
+                    frmCanvas.MdiParent = frm;
+                    frmCanvas.Show();
+                }
 
-            if (result == DialogResult.OK)
-            {
-                Form frm = (this.Parent as Form);
-                frmImageViewer frmImageViewer = new frmImageViewer(openFileDialog.FileName);
-                frmImageViewer.MdiParent = frm;
-                frmImageViewer.Show();
             }
 
         }

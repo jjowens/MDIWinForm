@@ -67,8 +67,16 @@ namespace MDIWinForm.Library.Controls.Utils
                 treeNode.Nodes[1].Nodes.Add("Misc.PixelFormat", string.Format("PixelFormat: {0}", img.PixelFormat.ToString()));
 
                 treeNode.Nodes.Add("PropertyItems");
-                treeNode.Nodes[2].Nodes.Add(string.Format("{0}: {1}", "Camera Make", encoding.GetString(img.GetPropertyItem(0x010F).Value)));
-                treeNode.Nodes[2].Nodes.Add(string.Format("{0}: {1}", "Camera Model", encoding.GetString(img.GetPropertyItem(0x110).Value)));
+
+                if (img.PropertyIdList.Contains(0x010F))
+                {
+                    treeNode.Nodes[2].Nodes.Add(string.Format("{0}: {1}", "Camera Make", encoding.GetString(img.GetPropertyItem(0x010F).Value)));
+                }
+
+                if (img.PropertyIdList.Contains(0x010F))
+                {
+                    treeNode.Nodes[2].Nodes.Add(string.Format("{0}: {1}", "Camera Model", encoding.GetString(img.GetPropertyItem(0x110).Value)));
+                }
 
             }
 
