@@ -44,6 +44,8 @@ namespace MDIWinForm.Library.Controls
                 Utils.ImageDetailsService service = new Utils.ImageDetailsService(ImageFilePath);
 
                 treeView1.Nodes.Add(service.getImageDetails());
+
+                treeView1.ExpandAll();
             }
         }
     }

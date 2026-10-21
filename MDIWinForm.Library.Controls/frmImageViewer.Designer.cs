@@ -32,7 +32,6 @@
             this.lblImageFile = new System.Windows.Forms.Label();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.lblImageDetails = new System.Windows.Forms.Label();
-            this.txtImageDetails = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picImageFile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +56,7 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(366, 25);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(382, 236);
+            this.treeView1.Size = new System.Drawing.Size(382, 413);
             this.treeView1.TabIndex = 2;
             // 
             // lblImageDetails
@@ -70,20 +69,11 @@
             this.lblImageDetails.Text = "Image Details:";
             this.lblImageDetails.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtImageDetails
-            // 
-            this.txtImageDetails.Location = new System.Drawing.Point(366, 276);
-            this.txtImageDetails.Multiline = true;
-            this.txtImageDetails.Name = "txtImageDetails";
-            this.txtImageDetails.Size = new System.Drawing.Size(383, 162);
-            this.txtImageDetails.TabIndex = 4;
-            // 
             // frmImageViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 450);
-            this.Controls.Add(this.txtImageDetails);
             this.Controls.Add(this.lblImageDetails);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.lblImageFile);
@@ -102,6 +92,5 @@
         private System.Windows.Forms.Label lblImageFile;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Label lblImageDetails;
-        private System.Windows.Forms.TextBox txtImageDetails;
     }
 }
