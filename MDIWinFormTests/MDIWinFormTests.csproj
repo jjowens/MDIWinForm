@@ -51,11 +51,19 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="ImageDetailsServiceTest.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MDIWinForm.Library.Controls\MDIWinForm.Library.Controls.csproj">
+      <Project>{64cea1be-be66-4d9b-b393-5a232fa78c12}</Project>
+      <Name>MDIWinForm.Library.Controls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
